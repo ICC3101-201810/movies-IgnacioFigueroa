@@ -14,6 +14,7 @@ namespace MoviesLab
         static List<Estudio> estudios = new List<Estudio>();
         static List<PeliculaActor> peliculaActors = new List<PeliculaActor>();
         static List<PeliculaProductor> peliculaProductors = new List<PeliculaProductor>();
+        static List<Critica> criticas = new List<Critica>();
 
         
 
@@ -96,7 +97,16 @@ namespace MoviesLab
                     informacion.Add(persona.nombre +" "+persona.apellido);
                 }
             }
+
+            List<Critica> peliculasCriticadas = criticas.Where(x => x.pelicula == pelicula).ToList();
+            if (peliculasCriticadas.Count > 0)
+            {
+                informacion.Add("Critica: ");
+                informacion.Add(peliculasCriticadas[0].mensaje);
+            }
             return informacion;
+
+            
         }
 
         public static List<string> InfoActor(string texto)

@@ -55,6 +55,7 @@
     <Compile Include="BuscadorForm.Designer.cs">
       <DependentUpon>BuscadorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Critica.cs" />
     <Compile Include="Estudio.cs" />
     <Compile Include="BienvenidaForm.cs">
       <SubType>Form</SubType>

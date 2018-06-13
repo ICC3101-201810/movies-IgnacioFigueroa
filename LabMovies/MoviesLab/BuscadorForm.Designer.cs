@@ -127,9 +127,9 @@
             // SalirB
             // 
             this.SalirB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalirB.Location = new System.Drawing.Point(635, 29);
+            this.SalirB.Location = new System.Drawing.Point(667, 29);
             this.SalirB.Name = "SalirB";
-            this.SalirB.Size = new System.Drawing.Size(198, 69);
+            this.SalirB.Size = new System.Drawing.Size(166, 53);
             this.SalirB.TabIndex = 9;
             this.SalirB.Text = "Salir y Guardar";
             this.SalirB.UseVisualStyleBackColor = true;
