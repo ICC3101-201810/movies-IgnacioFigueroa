@@ -8,13 +8,13 @@ namespace MoviesLab
 {
     public class PeliculaActor
     {
-        Pelicula pelicula;
-        Persona actor;
+        public Pelicula pelicula { get; private set; }
+        public List<Persona> actores { get; private set; }
 
-        public PeliculaActor(Pelicula pelicula, Persona actor)
+        public PeliculaActor(Pelicula pelicula, List<Persona> actores)
         {
             this.pelicula = pelicula;
-            this.actor = actor;
+            this.actores = actores;
         }
     }
 }

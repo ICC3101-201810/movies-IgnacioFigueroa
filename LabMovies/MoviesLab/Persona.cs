@@ -11,8 +11,8 @@ namespace MoviesLab
     {
         public string nombre { get; private set; }
         public string apellido { get; private set; }
-        string fechadeNacimiento;
-        string biografia;
+        public string fechadeNacimiento { get; private set; }
+        public string biografia { get; private set; }
         public Tipo tipo { get; private set; }
 
         public Persona(string nombre, string apellido, string fechadeNacimiento, string biografia, Tipo tipo)

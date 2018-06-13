@@ -28,27 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 55);
+            this.label1.Location = new System.Drawing.Point(9, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(778, 36);
+            this.label1.Size = new System.Drawing.Size(613, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "BIENVENIDO/A A ESTE ESPECTACULAR PROGRAMA";
             // 
-            // Form1
+            // timer1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // BienvenidaForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 153);
+            this.ClientSize = new System.Drawing.Size(651, 124);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "BienvenidaForm";
             this.Text = "Bienvenida";
+            this.Load += new System.EventHandler(this.BienvenidaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -57,6 +67,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

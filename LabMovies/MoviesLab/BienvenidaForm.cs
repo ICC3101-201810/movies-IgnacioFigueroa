@@ -16,6 +16,17 @@ namespace MoviesLab
         public BienvenidaForm()
         {
             InitializeComponent();
+            timer1.Start();
+        }
+
+        private void BienvenidaForm_Load(object sender, EventArgs e)
+        { 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            OnInicio(this, EventArgs.Empty);
+            Hide();
         }
     }
 }

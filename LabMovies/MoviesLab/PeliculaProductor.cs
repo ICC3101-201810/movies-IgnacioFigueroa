@@ -8,7 +8,13 @@ namespace MoviesLab
 {
     public class PeliculaProductor
     {
-        Pelicula pelicula;
-        Persona productor;
+        public Pelicula pelicula { get; private set; }
+        public List<Persona> productores { get; private set; }
+
+        public PeliculaProductor(Pelicula pelicula, List<Persona> productores)
+        {
+            this.pelicula = pelicula;
+            this.productores = productores;
+        }
     }
 }
