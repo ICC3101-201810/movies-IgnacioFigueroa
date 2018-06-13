@@ -17,7 +17,7 @@ namespace MoviesLab
         public event EventHandler<BuscadorEventArgs> OnBusqueda;
         public event EventHandler<BuscadorEventArgs> OnMostrarInfo;
         public List<string> listaMostrarBusqueda;
-        public List<string> listaMostrarInformacion;
+        public List<string> listaMostrarInformacion ;
         public Busqueda parametro;
 
         public BuscadorForm()
@@ -26,6 +26,8 @@ namespace MoviesLab
             MostrarLB.Enabled = false;
             InformacionLB.Hide();
             InformacionLB.Enabled = false;
+            listaMostrarBusqueda = new List<string>();
+            listaMostrarInformacion = new List<string>();
         }
 
         private void ClickBoton(Busqueda busqueda)
@@ -53,13 +55,17 @@ namespace MoviesLab
 
         private void BusquedaTB_TextChanged(object sender, EventArgs e)
         {
+            listaMostrarBusqueda.Clear();
+            MostrarLB.DataSource = new List<string>();
+            MostrarLB.Enabled = false;
+            InformacionLB.Hide();
+            if (BusquedaTB.Text.Length < 3) return;
             BuscadorEventArgs buscadorEventArgs = new BuscadorEventArgs();
             buscadorEventArgs.texto = BusquedaTB.Text.ToUpper();
             OnBusqueda(this, buscadorEventArgs);
             MostrarLB.DataSource = listaMostrarBusqueda;
             MostrarLB.Refresh();
-            MostrarLB.Enabled = false;
-            InformacionLB.Hide();
+
                        
         }
 
@@ -94,7 +100,7 @@ namespace MoviesLab
             buscadorEventArgs.busqueda = parametro;
             OnMostrarInfo(this, buscadorEventArgs);
             InformacionLB.DataSource = listaMostrarInformacion;
-            InformacionLB.Show();
+
         }
 
         private void InformacionVB_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,6 +122,11 @@ namespace MoviesLab
         private void InformacionLB_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MostrarLB_Click(object sender, EventArgs e)
+        {
+            InformacionLB.Show();
         }
     }
 }

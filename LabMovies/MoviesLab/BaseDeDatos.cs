@@ -9,7 +9,7 @@ namespace MoviesLab
     [Serializable()]
     public static class BaseDeDatos
     {
-        static List<Pelicula> peliculas = new List<Pelicula>();
+        static List<Pelicula> peliculas = new List<Pelicula> { new Pelicula("prueba", new Persona("nombre", "apellido", "fecha", "biografia", Tipo.Director), "estreno", "descripcion",1000, new Estudio("nombre estudio", "direccion", "apertura")), new Pelicula("pruebo", new Persona("nombre", "apellido", "fecha", "biografia", Tipo.Director), "estreno", "descripcion", 1000, new Estudio("nombre estudio", "direccion", "apertura")) };
         static List<Persona> personas= new List<Persona>();
         static List<Estudio> estudios = new List<Estudio>();
         static List<PeliculaActor> peliculaActors = new List<PeliculaActor>();
@@ -21,10 +21,12 @@ namespace MoviesLab
         public static List<string> BusquedaGeneral(string texto)
         {
             List<string> nombres = new List<string>();
-            nombres.AddRange(peliculas.Where(x => x.nombre.ToUpper().Contains(texto) || x.descirpcion.ToUpper().Contains(texto)).Select(x => x.nombre).ToList());
-            nombres.AddRange(personas.Where(x => x.nombre.ToUpper().Contains(texto) || x.apellido.ToUpper().Contains(texto)).Select(x => x.nombre).ToList());
-            nombres.AddRange(estudios.Where(x => x.nombre.ToUpper().Contains(texto) || x.direccion.ToUpper().Contains(texto)).Select(x => x.nombre).ToList());
-            
+            List<string>peliculasNombres = peliculas.Where(x => x.nombre.ToUpper().Contains(texto) || x.descripcion.ToUpper().Contains(texto)).Select(x => x.nombre).ToList();
+            List<string> personasNombres = personas.Where(x => x.nombre.ToUpper().Contains(texto) || x.apellido.ToUpper().Contains(texto)).Select(x => x.nombre).ToList();
+            List<string> estudiosNombres = estudios.Where(x => x.nombre.ToUpper().Contains(texto) || x.direccion.ToUpper().Contains(texto)).Select(x => x.nombre).ToList();
+            nombres.AddRange(peliculasNombres);
+            nombres.AddRange(personasNombres);
+            nombres.AddRange(estudiosNombres);
 
             return nombres;
         }
@@ -76,7 +78,7 @@ namespace MoviesLab
             informacion.Add($"Nombre: {pelicula.nombre}");
             informacion.Add($"Director: {pelicula.director.nombre} {pelicula.director.apellido}");
             informacion.Add($"Fecha de Estreno: {pelicula.fechaDeEstreno}");
-            informacion.Add($"Descripcion: {pelicula.descirpcion}");
+            informacion.Add($"Descripcion: {pelicula.descripcion}");
             informacion.Add($"Presupuesto: {pelicula.presupuesto}");
             informacion.Add($"Estudio: {pelicula.estudio.nombre}");
             informacion.Add("Actores: ");

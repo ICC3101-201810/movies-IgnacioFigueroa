@@ -11,16 +11,16 @@ namespace MoviesLab
         public string nombre { get; private set; }
         public Persona director { get; private set; }
         public string fechaDeEstreno { get; private set; }
-        public string descirpcion { get; private set; }
+        public string descripcion { get; private set; }
         public int presupuesto { get; private set; }
         public Estudio estudio { get; private set; }
 
-        public Pelicula(string nombre, Persona director, string fechaDeEstreno, string descirpcion, int presupuesto, Estudio estudio)
+        public Pelicula(string nombre, Persona director, string fechaDeEstreno, string descripcion, int presupuesto, Estudio estudio)
         {
             this.nombre = nombre;
             this.director = director;
             this.fechaDeEstreno = fechaDeEstreno;
-            this.descirpcion = descirpcion;
+            this.descripcion = descripcion;
             this.presupuesto = presupuesto;
             this.estudio = estudio;
         }

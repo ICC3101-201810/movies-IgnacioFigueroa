@@ -49,7 +49,7 @@ namespace MoviesLab
 
         public void BuscadorForm_OnBusqueda(object sender, BuscadorEventArgs e)
         {
-            buscadorForm.listaMostrarBusqueda.Clear();
+
             int contador = 0;
             foreach(string s in BaseDeDatos.BusquedaGeneral(e.texto))
             {

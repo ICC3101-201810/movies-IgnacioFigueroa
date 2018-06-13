@@ -122,6 +122,7 @@
             this.MostrarLB.Name = "MostrarLB";
             this.MostrarLB.Size = new System.Drawing.Size(470, 420);
             this.MostrarLB.TabIndex = 7;
+            this.MostrarLB.Click += new System.EventHandler(this.MostrarLB_Click);
             this.MostrarLB.SelectedIndexChanged += new System.EventHandler(this.MostrarLB_SelectedIndexChanged);
             // 
             // SalirB
